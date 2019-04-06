@@ -2,6 +2,7 @@
 
 # This script creates a folder with the name of the first argument given, then creates 10 files in that directory to peform tests on.
 
+CONTENT='ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅabcdefghijklmnopqrstuvxyzæøå0123456789'
 mkdir $1
 
 for i in {1..10}
