@@ -1,0 +1,41 @@
+#!/bin/bash
+
+HOSTNAME=`hostname -s`
+USER=`whoami`
+
+while :
+do
+  tput clear
+  cat <<HEREDOC
+  ______________________________________
+  user: $USER            host: $HOSTNAME
+  ______________________________________
+  1: List files in current directory
+  2: Open up nano editor
+  3: List who is on the system
+  h: Help page
+  q: Quit menu
+  ______________________________________
+HEREDOC
+  echo -e -n "\tHit any of the following keys 1, 2, 3, h, q: "
+  read CHOICE
+  case $CHOICE in
+  1) ls -l;;
+  2) nano;;
+  3) who;;
+  H|h)
+  cat <<HELPDOC
+  Hit 1 to list storage
+  Hit 2 to start up the nano editor
+  Hit 3 to see who's on the system
+  Hit h to open help page
+  Hit q to quit
+  Hit any other key to hear the error sound
+HELPDOC
+    ;;
+  Q|q) exit 0;;
+  *) echo -e "\t\007False input";;
+  esac
+  echo -e -n "\tHit return key to continue"
+  read $BLABLA
+done
