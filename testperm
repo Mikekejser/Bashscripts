@@ -1,0 +1,10 @@
+#!/bin/bash
+# simple script to test if you have permission to edit the file given as the first argument.
+# Simpelt script til at test om bruger har tilladelse to at redigere filnavn givet som første argument.
+
+if [ ! -w $1 ]
+then
+  echo "Du har ikke tilladelse til at redigere $1"
+else
+  echo "Du har tilladelse til at redigere $1"
+fi
